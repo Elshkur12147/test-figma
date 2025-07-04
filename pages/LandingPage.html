@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лид Конвейер - Лидогенерация для бизнеса</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d2d2d;
+            max-width: 1550px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2d2d2d;
+            border-radius: 0 0 40px 40px;
+            padding: 6px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 70px;
+        }
+
+        .logo {
+            width: 250px;
+            height: 70px;
+        }
+
+        .nav-menu {
+            display: none;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #ff6600;
+        }
+
+        .header-contacts {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .phone {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 39px;
+            text-decoration: none;
+        }
+
+        .hamburger {
+            display: block;
+            position: absolute;
+            top: 48px;
+            right: 788px;
+            width: 28px;
+            height: 36px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #f6f6f6;
+            border-radius: 0 0 40px 40px;
+            padding: 60px 70px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-main {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .hero-text {
+            width: 100%;
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 52px;
+            color: #2d2d2d;
+            margin-bottom: 40px;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 38px;
+            color: #2d2d2d;
+            margin-bottom: 20px;
+        }
+
+        .emoji {
+            width: 72px;
+            height: 72px;
+            margin-left: 20px;
+        }
+
+        .cta-button {
+            background-color: #ff6600;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 20px 34px;
+            font-family: 'Kollektif', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 29px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: #e55d00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 30px;
+        }
+
+        .star {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+        }
+
+        .star-1 {
+            top: -20px;
+            right: 20px;
+        }
+
+        .star-2 {
+            bottom: 20px;
+            left: -20px;
+        }
+
+        /* Chip Navigation */
+        .chip-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .chip {
+            background-color: #ffffff;
+            border-radius: 30px 30px 0 0;
+            padding: 18px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #808080;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chip:hover {
+            background-color: #ff6600;
+            color: #ffffff;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 70px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 52px;
+            text-align: center;
+            color: #2d2d2d;
+            margin-bottom: 40px;
+        }
+
+        .section-title .highlight {
+            color: #ff6600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: #f6f6f6;
+            border-radius: 30px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 39px;
+            color: #2d2d2d;
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+        }
+
+        .feature-description {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #808080;
+        }
+
+        .feature-image {
+            width: 100%;
+            max-width: 364px;
+            height: auto;
+            border-radius: 30px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 120px 70px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background-color: #f6f6f6;
+            border-radius: 30px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            background-color: #2d2d2d;
+            color: #ffffff;
+        }
+
+        .pricing-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .pricing-badge {
+            background-color: #ffffff;
+            border: 1px solid #2d2d2d;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 39px;
+            color: #2d2d2d;
+        }
+
+        .pricing-card.featured .pricing-badge {
+            background-color: #ffffff;
+            color: #2d2d2d;
+        }
+
+        .pricing-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 42px;
+            margin-bottom: 20px;
+        }
+
+        .price-highlight {
+            background: linear-gradient(90deg, #ff6600 0%, #e55d97 50%, #8d12f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pricing-description {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #808080;
+            margin-bottom: 28px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 14px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+        }
+
+        .check-icon {
+            width: 16px;
+            height: 24px;
+        }
+
+        /* Additional Services */
+        .additional-services {
+            padding: 120px 70px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: #f6f6f6;
+            border-radius: 40px;
+            padding: 40px;
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .service-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 42px;
+            color: #2d2d2d;
+        }
+
+        .service-price {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .price-from {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            color: #2d2d2d;
+        }
+
+        .price-amount {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 44px;
+            background: linear-gradient(90deg, #ff6600 0%, #e55d97 50%, #8d12f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pagination-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .pagination-horizontal {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        .pagination-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid #8d4bf6;
+            border-radius: 5px;
+            align-items: center;
+        }
+        
+        .pagination-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-dot:hover {
+            transform: scale(1.1);
+        }
+        
+        .pagination-dot.active {
+            background-color: #ff6600;
+        }
+        
+        .pagination-dot.inactive {
+            background-color: #dbdbdb;
+        }
+        
+        .pagination-dot.gray {
+            background-color: #c0c0c0;
+        }
+        
+        .pagination-dot.dark-gray {
+            background-color: #808080;
+        }
+        
+
+        /* Client Logos */
+        .clients {
+            padding: 120px 70px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .client-logo {
+            background-color: #f6f6f6;
+            border-radius: 30px;
+            padding: 64px 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Reviews */
+        .reviews {
+            padding: 120px 70px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background-color: #f6f6f6;
+            border-radius: 30px;
+            padding: 40px;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            margin-bottom: 18px;
+        }
+
+        .rating {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 44px;
+            color: #2d2d2d;
+        }
+
+        .stars {
+            display: flex;
+            gap: 6px;
+        }
+
+        .star-filled {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(90deg, #ff6600 0%, #e55d97 50%, #8d12f9 100%);
+            border-radius: 50%;
+        }
+
+        .star-empty {
+            width: 48px;
+            height: 48px;
+            background-color: #dfdfdf;
+            border-radius: 50%;
+        }
+
+        .review-text {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #2d2d2d;
+            margin-bottom: 18px;
+        }
+
+        .review-niche {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #808080;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 120px 70px;
+        }
+
+        .video-container {
+            background-color: #2d2d2d;
+            border-radius: 40px;
+            padding: 234px 56px;
+            text-align: center;
+            position: relative;
+        }
+        .pagination-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+       .pagination-horizontal {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            align-items: center;
+        }
+         .pagination-dot.active {
+            background-color: #ff6600;
+        }
+        
+        .pagination-dot.inactive {
+            background-color: #dbdbdb;
+        }
+        .play-button {
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 120px 56px;
+        }
+
+        .technology-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .technology-image {
+            width: 100%;
+            max-width: 676px;
+            height: auto;
+            border-radius: 40px;
+        }
+
+        .technology-text {
+            width: 100%;
+        }
+
+        .technology-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 52px;
+            color: #2d2d2d;
+            margin-bottom: 40px;
+        }
+
+        .technology-description {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .technology-description p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #2d2d2d;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #2d2d2d;
+            border-radius: 40px;
+            padding: 60px 56px;
+            margin: 120px 70px;
+        }
+
+        .cta-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .cta-text {
+            width: 100%;
+        }
+
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 52px;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        /* How it Works */
+        .how-it-works {
+            padding: 120px 70px;
+        }
+
+        .step-card {
+            background-color: #f6f6f6;
+            border-radius: 40px;
+            padding: 74px 56px;
+        }
+
+        .step-content {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .step-header {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+        }
+
+        .step-number-row {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .step-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 98px;
+            color: #2d2d2d;
+        }
+
+        .step-icon {
+            width: 72px;
+            height: 72px;
+        }
+
+        .step-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 52px;
+            color: #2d2d2d;
+        }
+
+        .step-description {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .step-description p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            color: #2d2d2d;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 120px 70px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background-color: #f6f6f6;
+            border-radius: 40px;
+            padding: 26px;
+        }
+
+        .benefit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .benefit-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 98px;
+            color: #2d2d2d;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .benefit-text {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #2d2d2d;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            background-color: #f6f6f6;
+            border-radius: 40px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-item-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .feature-item-text {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #808080;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 120px 70px;
+        }
+
+        .faq-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .faq-item {
+            background-color: #f6f6f6;
+            border-radius: 30px;
+            padding: 38px 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background-color: #e5e5e5;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question-text {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #2d2d2d;
+            width: 86%;
+        }
+
+        .faq-icon {
+            width: 46px;
+            height: 46px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 20px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #2d2d2d;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-image {
+            width: 100%;
+            max-width: 1200px;
+            height: 700px;
+            margin: 0 auto;
+        }
+
+        /* Marketing Section */
+        .marketing {
+            
+        }
+
+        .marketing-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .marketing-text {
+            width: 100%;
+        }
+
+        .marketing-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 52px;
+            margin-bottom: 30px;
+        }
+
+        .marketing-title .highlight {
+            color: #ff6600;
+        }
+
+        .marketing-description {
+            display: grid;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 58px;
+             align-items: center;
+        }
+
+        .marketing-description p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 29px;
+            color: #2d2d2d;
+        }
+
+        .read-more {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            color: #808080;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Contacts */
+        .contacts {
+            background-color: #f6f6f6;
+            border-radius: 60px;
+            padding: 120px 70px;
+        }
+
+        .contacts-content {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .contacts-text {
+            width: 100%;
+        }
+
+        .contacts-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 59px;
+            color: #2d2d2d;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .contacts-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 38px;
+            color: #808080;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contacts-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-label {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 39px;
+            color: #808080;
+        }
+
+        .contact-value {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 39px;
+            color: #2d2d2d;
+        }
+
+        .messenger-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .messenger-icon {
+            width: 64px;
+            height: 64px;
+        }
+
+        .contacts-image {
+            width: 100%;
+            max-width: 880px;
+            height: auto;
+            border-radius: 60px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2d2d2d;
+            border-radius: 40px 40px 0 0;
+            padding: 76px 56px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .footer-main {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 39px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .footer-company {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-links a {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 25px;
+            color: #808080;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6600;
+        }
+        .step-card {
+  display: none;
+}
+
+.step-card.active {
+  display: block;
+}
+
+    
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .nav-menu {
+                display: flex;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .hero-main {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .hero-text {
+                width: 44%;
+            }
+
+            .hero-image {
+                width: 56%;
+            }
+
+            .hero-title {
+                font-size: 60px;
+                line-height: 80px;
+            }
+
+            .hero-subtitle {
+                font-size: 32px;
+                line-height: 38px;
+            }
+
+            .cta-button {
+                font-size: 24px;
+            }
+
+            .chip {
+                font-size: 20px;
+                padding: 30px 32px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .clients-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .features-list {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .faq-content {
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            .faq-list {
+                width: 50%;
+            }
+
+            .faq-image {
+                width: 50%;
+            }
+
+            .marketing-content {
+                flex-direction: row;
+                gap: 30px;
+            }
+
+            .marketing-text {
+                width: 46%;
+            }
+
+            .contacts-content {
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            .contacts-text {
+                width: 46%;
+            }
+
+            .contacts-title {
+                text-align: left;
+            }
+
+            .contacts-subtitle {
+                text-align: left;
+            }
+
+            .technology-content {
+                flex-direction: row;
+                gap: 42px;
+            }
+
+            .technology-image {
+                width: 42%;
+            }
+
+            .technology-text {
+                width: 58%;
+            }
+
+            .cta-content {
+                flex-direction: row;
+                gap: 42px;
+            }
+
+            .cta-text {
+                width: 48%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 32px;
+            }
+
+            .hero-title {
+                font-size: 80px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .reviews-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-on-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .scale-on-hover:hover {
+            transform: scale(1.05);
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flizasapp8132back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <img src="../assets/images/img_logo.png" alt="Лид Конвейер" class="logo" />
+            
+            <nav class="nav-menu">
+                <a href="#how-it-works">Как это работает</a>
+                <a href="#pricing">Цена</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            
+            <div class="header-contacts">
+                <img src="../assets/images/img_whatsapp_socialnetwork_17360.png" alt="WhatsApp" class="social-icon" />
+                <img src="../assets/images/img_telegram_icon_130816.svg" alt="Telegram" class="social-icon" />
+                <a href="tel:+74951183282" class="phone">+7 495 118-32-82</a>
+            </div>
+            
+            <div class="hamburger">
+                <img src="../assets/images/img_vector_stroke.svg" alt="Menu" />
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-main">
+                <div class="hero-text">
+                    <h1 class="hero-title">Лидогенерация для бизнеса</h1>
+                    <div style="display: flex; align-items: center; margin-bottom: 40px;">
+                        <p class="hero-subtitle">Покупайте только целевые лиды по фиксированной цене от 300 ₽</p>
+                        <img src="../assets/images/img_money_mouth_face.png" alt="😋" class="emoji" />
+                    </div>
+                    <a href="#pricing" class="cta-button">Выбрать пакет лидов</a>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="../assets/images/women.svg" alt="Лидогенерация" class="scale-on-hover" />
+                    <img src="../assets/images/img_star_1.png" alt="⭐" class="star star-1" />
+                    <img src="../assets/images/img_star_1.png" alt="⭐" class="star star-2" />
+                </div>
+            </div>
+            
+            <div class="chip-nav">
+                <div class="chip">Лидогенерация в b2b</div>
+                <div class="chip">Биржа лидов</div>
+                <div class="chip">Сервис по Лидгену</div>
+                <div class="chip">Лиды для производства</div>
+                <div class="chip">Клиенты для бизнеса</div>
+                <div class="chip">Определить телефон посетителя сайта</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">Завалим ваш отдел продаж <span class="highlight">целевыми Лидами</span></h2>
+        
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-header">
+                    <h3 class="feature-title">Оплата за результат</h3>
+                    <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                </div>
+                <p class="feature-description">Вы платите только за переданные и получение вами целевые Лиды — их контактные данные (телефон, Telegram, email)</p>
+                <img src="../assets/images/img_2f25d007_62b3_4.png" alt="Результат" class="feature-image" />
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-header">
+                    <h3 class="feature-title">Качественные лиды</h3>
+                    <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                </div>
+                <p class="feature-description">Все передаваемые вам Лиды — это потенциальные клиенты, которые искали ваш товар или услугу</p>
+                <img src="../assets/images/img_4707165e_2aac_4.png" alt="Качество" class="feature-image" />
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-header">
+                    <h3 class="feature-title">Любой объём — на ваш выбор</h3>
+                    <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                </div>
+                <p class="feature-description">Покупайте сколько контактов потенциальных клиентов в месяц — сколько требуется вам!</p>
+                <img src="../assets/images/img_98050f18_49ce_4.png" alt="Объём" class="feature-image" />
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-header">
+                    <h3 class="feature-title">Комплекс технологий</h3>
+                    <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                </div>
+                <p class="feature-description">После расчёта стоимости Лидов и оплаты выбранного пакета — вы получите уникальный код для своего сайта, который позволит отслеживать контакты тех, кто не оставил заявку</p>
+                <img src="../assets/images/img_removal_693_1.png" alt="Технологии" class="feature-image" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 class="section-title">Стоимость технологий <span class="highlight">«Лид Конвейер»</span></h2>
+            <p style="font-size: 24px; color: #808080; margin-top: 20px;">Оптимальные тарифы и цены на получение готовых Лидов и заявок с вашего сайта, без переплаты и абонентской платы</p>
+        </div>
+        
+        <div class="pricing-cards">
+            <div class="pricing-card fade-in">
+                <div class="pricing-header">
+                    <div class="pricing-badge">Старт</div>
+                    <img src="../assets/images/img_star_1_blue_gray_900.svg" alt="⭐" class="feature-icon" />
+                </div>
+                <div class="pricing-price">50 готовых лидов за <span class="price-highlight">22 500 ₽</span></div>
+                <p class="pricing-description">Стартовый пакет для тех, кто хочет купить Лидов со своего сайта и повысить свои продаж</p>
+                <ul class="pricing-features">
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />50 Лидов</li>
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />450 ₽ за один Лид</li>
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />Получение за 5–7 дней</li>
+                </ul>
+                <a href="#" class="cta-button">Купить</a>
+            </div>
+            
+            <div class="pricing-card featured fade-in">
+                <div class="pricing-header">
+                    <div class="pricing-badge">Стандарт</div>
+                    <img src="../assets/images/img_star_1_white_a700.svg" alt="⭐" class="feature-icon" />
+                </div>
+                <div class="pricing-price">100 готовых лидов за <span class="price-highlight">40 000 ₽</span></div>
+                <p class="pricing-description">Оптимальный пакет Лидов для любого отдела продаж и для повышения продаж своих товаров или услуг</p>
+                <ul class="pricing-features">
+                    <li><img src="../assets/images/img_vector_8_white_a700.svg" alt="✓" class="check-icon" />100 Лидов</li>
+                    <li><img src="../assets/images/img_vector_8_white_a700.svg" alt="✓" class="check-icon" />400 ₽ за один Лид</li>
+                    <li><img src="../assets/images/img_vector_8_white_a700.svg" alt="✓" class="check-icon" />Получение за 7–14 дней</li>
+                    <li><img src="../assets/images/img_vector_8_white_a700.svg" alt="✓" class="check-icon" />Возможность показа Лидам рекламы через Яндекс.Директ</li>
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />Готовый и конверсионный скрипт продаж целевым Лидам</li>
+                </ul>
+                <a href="#" class="cta-button">Купить</a>
+            </div>
+            
+            <div class="pricing-card fade-in">
+                <div class="pricing-header">
+                    <div class="pricing-badge">Премиум</div>
+                    <img src="../assets/images/img_star_1_blue_gray_900.svg" alt="⭐" class="feature-icon" />
+                </div>
+                <div class="pricing-price">300 готовых лидов за <span class="price-highlight">90 000 ₽</span></div>
+                <p class="pricing-description">Максимум целевых Лидов в ближайшее время для вашего бизнеса которые уже завтра могут стать Вашими клиентами!</p>
+                <ul class="pricing-features">
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />300 Лидов</li>
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />300 ₽ за один Лид</li>
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />Получение за 14–30 дней</li>
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />Возможность показа Лидам рекламы через Яндекс.Директ</li>
+                    <li><img src="../assets/images/img_vector_8.svg" alt="✓" class="check-icon" />Готовый и конверсионный скрипт продаж целевым Лидам</li>
+                </ul>
+                <a href="#" class="cta-button">Купить</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="additional-services">
+        <h2 class="section-title">Дополнительные услуги</h2>
+        
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-header">
+                    <div>
+                        <h3 class="service-title">Создание промо-страницы</h3>
+                        <div class="service-price">
+                            <span class="price-from">от</span>
+                            <span class="price-amount">15 000 ₽</span>
+                        </div>
+                    </div>
+                    <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                </div>
+                <a href="#" class="cta-button">Купить</a>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-header">
+                    <div>
+                        <h3 class="service-title">Настройка и ведение Яндекс.Директ</h3>
+                        <div class="service-price">
+                            <span class="price-from">от</span>
+                            <span class="price-amount">10 000 ₽</span>
+                        </div>
+                    </div>
+                    <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                </div>
+                <a href="#" class="cta-button">Купить</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section class="clients">
+        <h2 class="section-title">Клиенты, которые уже покупают <span class="highlight">Лидов для своего бизнеса</span></h2>
+        <p style="text-align: center; font-size: 24px; color: #808080; margin-top: 20px;">Более 5000 компаний по всей России уже используют покупку Лидов!</p>
+        
+        <div class="clients-grid">
+            <div class="client-logo fade-in">
+                <img src="../assets/images/img_skoda_seeklogo_2.png" alt="Skoda" />
+            </div>
+            <div class="client-logo fade-in">
+                <img src="../assets/images/img_logo_png_1.png" alt="Skillbox" />
+            </div>
+            <div class="client-logo fade-in">
+                <img src="../assets/images/img_logo_4_1.svg" alt="Papa Johns" />
+            </div>
+            <div class="client-logo fade-in">
+                <img src="../assets/images/img_2_line_ab_rus_1.png" alt="Деловые Линии" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <p style="font-size: 24px; color: #808080; margin-top: 12px;">Более 89% наших клиентов сотрудничают с нами ежемесячно на протяжении более 2-х лет</p>
+        </div>
+        
+        <div class="reviews-grid">
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <span class="rating">5,0</span>
+                    <div class="stars">
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                    </div>
+                </div>
+                <p class="review-text">«Стабильно получаем новые лиды из сервиса. С точки зрения рентабельности нареканий нет. Тёплая заявка 800–1000 рублей, конверсия, цена-качество устраивает. Общее впечатление достаточно хорошее, цена, качество, скорость».</p>
+                <p class="review-niche">Ниша: банкротство, списание долгов</p>
+            </div>
+            
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <span class="rating">4,8</span>
+                    <div class="stars">
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                    </div>
+                </div>
+                <p class="review-text">«С вашим сервисом работаем с июня 22 года. Нас заинтересовало, и мы решили протестировать. Взяли минимальный пакет из 10 новых лидов, а потом, как он закончился, взяли повышенный пакет. Учитывая нашу сферу и посмотреть статистику, из 100 заинтересованных 15 в продажу. Это хороший результат».</p>
+                <p class="review-niche">Ниша: банкротство, списание долгов</p>
+            </div>
+            
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <span class="rating">5,0</span>
+                    <div class="stars">
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                    </div>
+                </div>
+                <p class="review-text">«С сервисом работаем чуть меньше года. Немного сомневались, но согласились попробовать, а после продолжили работать. Новые клиенты появились сразу, передали на наш колл-центр. С вашего источника дешевле, чем с других сервисов. Безусловно, с вами стоит работать».</p>
+                <p class="review-niche">Ниша: банкротство, списание долгов</p>
+            </div>
+            
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <span class="rating">4,9</span>
+                    <div class="stars">
+                       <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                        <img src="../assets/images/img_star_1.png" alt="⭐" class="feature-icon" />
+                    </div>
+                </div>
+                <p class="review-text">«С вашей компанией работаем более 2‑х лет, сотрудничество полезное. Мы все посмотрели, разобрались, что сервис даёт реально целевые заявки. Заключили контракт на 23 000 рублей, окупилось. Понравилась технология, она помогает нам получать лиды».</p>
+                <p class="review-niche">Ниша: банкротство, списание долгов</p>
+            </div>
+        </div>
+        
+        <!-- Video Reviews -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;">
+            <div style="background-color: #2d2d2d; border-radius: 40px; padding: 124px 56px; text-align: center;">
+                <img src="../assets/images/img_polygon_1.png" alt="Play" style="width: 70px; height: 70px; cursor: pointer;" />
+                
+            </div>
+            
+            <div style="background-color: #2d2d2d; border-radius: 40px; padding: 124px 56px; text-align: center;">
+                <img src="../assets/images/img_polygon_1.png" alt="Play" style="width: 70px; height: 70px; cursor: pointer;" />
+                
+            </div>
+            <div style="background-color: #2d2d2d; border-radius: 40px; padding: 124px 56px; text-align: center;">
+                <img src="../assets/images/img_polygon_1.png" alt="Play" style="width: 70px; height: 70px; cursor: pointer;" />
+                
+            </div>
+            <p style="color: #2d2d2d; margin-top: 10px;text-align: center;">Отзыв 1: название</p><p style="color: #2d2d2d; margin-top: 10px;text-align: center;">Отзыв 2: название</p><p style="color: #2d2d2d; margin-top: 10px; text-align: center;">Отзыв 3: название</p>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology">
+        <div class="technology-content">
+            <div style="position: relative;">
+                <img src="../assets/images/img_4837404_2544894.png" alt="Технология" class="technology-image" />
+                <img src="../assets/images/img_star_1.png" alt="⭐" style="position: absolute; top: 10px; left: 10px; width: 56px; height: 56px;" />
+                <img src="../assets/images/img_star_2.png" alt="⭐" style="position: absolute; bottom: 10px; right: 10px; width: 56px; height: 56px;" />
+            </div>
+            
+            <div class="technology-text">
+                <h2 class="technology-title">Технология <span class="highlight">«Лид Конвейер»</span> <img src="../assets/images/img_smiling_face_with.png" alt="😊" style="width: 60px; height: 60px; margin-left: 20px;" /></h2>
+                
+                <div class="technology-description">
+                    <p>Мы разработали программный комплекс, который позволяет определять контактные данные (телефон, Telegram, email) тех посетителей вашего сайта, кто был на сайте, но не оставил заявку.</p>
+                    <p>Далее, на основе собственных разработок, мы идентифицируем пользователей по интересам и интересующим их товарам и услугам — вам передаём только тех, кто заинтересован в вашей услуге или товаре.</p>
+                    <p>Вы платите только за результат — за полученных Лидов (заявки) на свои услуги или товары.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <div class="cta-text">
+                <h2 class="cta-title">Зарегистрируйтесь и добавьте свой проект в систему — начните получать Лидов сегодня!</h2>
+                <a href="#" class="cta-button">Зарегистрироваться</a>
+            </div>
+            
+            <div style="position: relative;">
+                <img src="../assets/images/sign.svg" alt="CTA Image" style="width: 100%; max-width: 682px; height: auto; border-radius: 40px;" />
+                <img src="../assets/images/img_star_1.png" alt="⭐" style="position: absolute; bottom: 20px; right: 20px; width: 88px; height: 88px;" />
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works" id="how-it-works">
+  <h2 class="section-title">Как это работает?</h2>
+
+  <div class="steps-container">
+       <div class="step-card active">
+      <div class="step-content">
+          <table class="step-header">
+            <tr >
+                <td><div class="step-number-row">
+
+            <span class="step-number">01</span>
+            <img src="../assets/images/img_man_technologist.png" alt="👨‍💻" class="step-icon" />
+                </div></td>
+                
+                </tr>
+  <tr>
+    <td >
+        <div class="step-header">
+          
+      <h3 class="step-title">Регистрация и добавление проекта в систему</h3>
+               </div>
+    
+    </td>
+    <td class="step-description" style="margin-left: 20px">
+     <p>1. Зарегистрируйтесь в нашем личном кабинете</p>
+      <p>2. При добавление проекта вам необходимо указать URL (адрес) своего сайта</p>
+      <p>3. Для вашего сайта будет сгенерирован уникальный код, который необходимо установить на свой сайт (в шаблоне сайта, перед тегом head)</p>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-content">
+          <table class="step-header">
+            <tr >
+                <td><div class="step-number-row">
+
+            <span class="step-number">02</span>
+            <img src="../assets/images/02.png" alt="👨‍💻" class="step-icon" />
+                </div></td>
+                
+                </tr>
+  <tr>
+    <td >
+        <div class="step-header">
+          
+      <h3 class="step-title">Выбор пакета и количества Лидов</h3>
+               </div>
+    
+    </td>
+      
+    <td class="step-description" style="margin-left: 20px">
+      <p>После добавления проекта в систему, вам необходимо выбрать тот пакет и количество Лидов, которое вам необходимо.</p>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+          
+ <div class="step-card">
+      <div class="step-content">
+          <table class="step-header">
+            <tr >
+                <td><div class="step-number-row">
+
+            <span class="step-number">03</span>
+            <img src="../assets/images/03.png" alt="👨‍💻" class="step-icon" />
+                </div></td>
+                
+                </tr>
+  <tr>
+    <td >
+        <div class="step-header">
+          
+      <h3 class="step-title">Оплата проекта    </h3>
+               </div>
+    
+    </td>
+    <td class="step-description" style="margin-left: 20px">
+      <p>Оплатить Лиды вы сможете пластиковой картой или безналичным переводом.</p>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+          
+ <div class="step-card">
+      <div class="step-content">
+          <table class="step-header">
+            <tr >
+                <td><div class="step-number-row">
+
+            <span class="step-number">04</span>
+            <img src="../assets/images/04.png" alt="👨‍💻" class="step-icon" />
+                </div></td>
+                
+                </tr>
+  <tr>
+    <td >
+        <div class="step-header">
+          
+      <h3 class="step-title">Получение кода для сайта</h3>
+               </div>
+    
+    </td>
+    <td class="step-description" style="margin-left: 20px">
+      <p>После оплаты, система для вас сгенерирует код, который вам необходимо установить на свой сайт (в шаблоне сайта, перед тегом head).</p>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+ <div class="step-card">
+      <div class="step-content">
+          <table class="step-header">
+            <tr >
+                <td><div class="step-number-row">
+
+            <span class="step-number">05</span>
+            <img src="../assets/images/05.png" alt="👨‍💻" class="step-icon" />
+                </div></td>
+                
+                </tr>
+  <tr>
+    <td >
+        <div class="step-header">
+          
+      <h3 class="step-title">Начало получения лидов</h3>
+               </div>
+    
+    </td>
+    <td class="step-description" style="margin-left: 20px">
+      <p>В зависимости от вашей тематики (услуги или товара), также объёма вашего трафика сайта система будет добавлять в личном кабинете контакты потенциальных клиентов, заинтересованных в вашей услуги и из вашего региона.</p>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+      
+
+
+
+    <!-- Добавь ещё .step-card блоков сюда по аналогии -->
+  </div>
+        <div class="pagination-section">
+                    <div class="pagination-horizontal">
+                        <div class="pagination-dot active" onclick="showStep(0)"></div>
+                        <div class="pagination-dot inactive" onclick="showStep(1)"></div>
+                        <div class="pagination-dot inactive" onclick="showStep(2)"></div>
+                        <div class="pagination-dot inactive" onclick="showStep(3)"></div>
+                        <div class="pagination-dot inactive" onclick="showStep(4)"></div>
+                    </div>
+            </div>
+        
+       
+         
+    </section>
+   
+
+    <!-- Video Presentation -->
+    <section class="video-section">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 class="section-title">Мы подготовили для вас видео-презентацию <span class="highlight">нашей работы</span> <img src="../assets/images/img_video_camera.png" alt="📹" style="width: 72px; height: 72px; margin-left: 20px;" /></h2>
+        </div>
+        
+        <div class="video-container">
+            <img src="../assets/images/img_polygon_1.png" alt="Play" class="play-button" />
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 class="section-title">Почему лучше <span class="highlight">заказать Лидов у нас</span></h2>
+            <p style="font-size: 24px; color: #808080; margin-top: 20px;">Лидогенерация — это стабильное получение клиентов и выполнение плана по продажам!</p>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in">
+                <div class="benefit-header">
+                    <span class="benefit-number">01</span>
+                    <img src="../assets/images/img_star_1_blue_gray_900.svg" alt="⭐" class="benefit-icon" />
+                </div>
+                <p class="benefit-text">Только качественные Лиды. Мы идентифицируем только тех посетителей, которым интересна ваша услуги и из вашего города.</p>
+            </div>
+            
+            <div class="benefit-card fade-in">
+                <div class="benefit-header">
+                    <span class="benefit-number">02</span>
+                    <img src="../assets/images/img_star_1_blue_gray_900.svg" alt="⭐" class="benefit-icon" />
+                </div>
+                <p class="benefit-text">Доступная цена и отсутствие минимального порога. У нас отсутствует минимальная плата за сервис, подписка и т.п. Вы покупаете столько Лидов — сколько хотите!</p>
+            </div>
+            
+            <div class="benefit-card fade-in">
+                <div class="benefit-header">
+                    <span class="benefit-number">03</span>
+                    <img src="../assets/images/img_star_1_blue_gray_900.svg" alt="⭐" class="benefit-icon" />
+                </div>
+                <p class="benefit-text">Техническая поддержка и комплекс услуг. Мы работаем для вас 24/7!</p>
+            </div>
+        </div>
+        
+        <div class="features-list">
+            <div class="feature-item fade-in">
+                <img src="../assets/images/img_high_voltage.png" alt="⚡" class="feature-item-icon" />
+                <p class="feature-item-text">Источник Лидов: контекстная реклама в Яндекс.Директ, SEO, SMM и другая реклама дополняют технологию «Лид Конвейер».</p>
+            </div>
+            
+            <div class="feature-item fade-in">
+                <img src="../assets/images/img_fire.png" alt="🔥" class="feature-item-icon" />
+                <p class="feature-item-text">Вы экономите на рекламе: получая контактные данных тех, кто не оставил заявки, но заинтересован в Вашем товаре или услуге — это дополнительный канал продаж.</p>
+            </div>
+            
+            <div class="feature-item fade-in">
+                <img src="../assets/images/img_glowing_star.png" alt="🌟" class="feature-item-icon" />
+                <p class="feature-item-text"><strong>Вы сможете прогнозировать продажи:</strong> чтобы не ждать, когда-же кто‑то позвонит или оставит заявку, звоните и продавайте первым!</p>
+            </div>
+            
+            <div class="feature-item fade-in">
+                <img src="../assets/images/img_hundred_points.png" alt="💯" class="feature-item-icon" />
+                <p class="feature-item-text">Безопасно: это абсолютно легальный и законный метод получения Лидов.</p>
+            </div>
+            
+            <div class="feature-item fade-in">
+                <img src="../assets/images/img_woman_running.png" alt="🏃‍♀️" class="feature-item-icon" />
+                <p class="feature-item-text">Быстро: запуск и получение первых Лидов обычно занимает 5–7 дней, а добавление проекта в систему менее 1 часа.</p>
+            </div>
+        </div>
+    </section>
+<section class="cta-section">
+        <div class="cta-content">
+            
+            
+            <div style="position: relative;">
+                <img src="../assets/images/img_mask_group_blue_gray_100_01.png" alt="CTA Image" style="width: 100%; max-width: 682px; height: auto; border-radius: 40px;" />
+                <img src="../assets/images/img_star_1.png" alt="⭐" style="position: absolute; top: 20px; left: 20px; width: 68px; height: 68px;" />
+                <img src="../assets/images/img_star_1.png" alt="⭐" style="position: absolute; bottom: 20px; right: 20px; width: 66px; height: 68px;" />
+            </div>
+            <div class="cta-text">
+                <h2 class="cta-title">Давайте принесём результат Вашему бизнесу? Завалите своей отдел продаж Лидами!</h2>
+                <a href="#" class="cta-button">Зарегистрироваться</a>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA -->
+    
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2 class="section-title">Вопросы и ответы</h2>
+        
+        <div class="faq-content">
+            <div class="faq-list">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <p class="faq-question-text">На сколько это безопасно, законно и может ли навредить моему сайту?</p>
+                        <img src="../assets/images/img_vector_1.svg" alt="+" class="faq-icon" />
+                    </div>
+                    <div class="faq-answer">
+                        <p>Наша технология полностью безопасна и законна. Мы используем только публично доступную информацию и не нарушаем никаких законов о защите персональных данных.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <p class="faq-question-text">Откуда берутся номера телефонов?</p>
+                        <img src="../assets/images/img_vector_1.svg" alt="+" class="faq-icon" />
+                    </div>
+                    <div class="faq-answer">
+                        <p>Номера телефонов получаются из открытых источников и баз данных, которые пользователи сами предоставили для коммерческого использования.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <p class="faq-question-text">Смогу ли я сам установить код на сайт?</p>
+                        <img src="../assets/images/img_vector_1.svg" alt="+" class="faq-icon" />
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, установка кода очень простая. Мы предоставляем подробную инструкцию, а также техническую поддержку для помощи в установке.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <p class="faq-question-text">На какую CMS или конструктор можно установить код «Лид Конвейер»?</p>
+                        <img src="../assets/images/img_vector_1.svg" alt="+" class="faq-icon" />
+                    </div>
+                    <div class="faq-answer">
+                        <p>Код можно установить на любую CMS: WordPress, Joomla, Drupal, Bitrix, Tilda, а также на любые конструкторы сайтов.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <p class="faq-question-text">Как оплатить ваш сервис?</p>
+                        <img src="../assets/images/img_vector_1.svg" alt="+" class="faq-icon" />
+                    </div>
+                    <div class="faq-answer">
+                        <p>Мы принимаем оплату банковскими картами, банковскими переводами, через электронные кошельки и другие удобные способы.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <img src="../assets/images/img_mask_group.png" alt="FAQ Image" class="faq-image" />
+        </div>
+    </section>
+
+    <!-- Marketing Section -->
+    <section class="marketing">
+        <div class="marketing-content">
+            <div class="marketing-text">
+                <table style="width: 1200px; margin-left:150px; height: 500">
+                <tr>
+                    <td><h2 class="marketing-title"><span class="highlight">Лидогенерация —</span> это новая эра маркетинга!</h2> 
+                <img src="../assets/images/img_rocket.png" alt="🚀" style="width: 72px; height: 72px; margin: 30px 0;" /> 
+                
+                
+                <a href="#" class="cta-button" style="margin-top: 30px;">Купить Лиды</a>
+                    </td>
+                    
+                    
+                    
+                    
+                        <td><div class="marketing-description">
+                    <p>Использование лидогенерации снижает стоимость привлечения клиентов, позволяет бизнесу сосредоточиться на основном продукте и значительно упрощает процесс работы.</p>
+                    <p>Стоимость заявок на нашей платформе зависит от их качества и сложности. Мы предоставляем прозрачные тарифы и выгодные условия сотрудничества.</p>
+                    <p>Наша биржа — это место встречи тех, кто заказывает заявки, и тех, кто их предоставляет. Мы создаём условия для успешного сотрудничества и взаимной выгоды.</p>
+                </div> 
+                            <p class="read-more">Читать больше</p></td>
+                    
+                
+                
+                    
+                    </table>
+                
+            </div>
+            
+            <img src="../assets/images/img_star_1.png" alt="⭐" style="width: 56px; height: 56px; margin-left: auto;" />
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="contacts" id="contacts">
+        <div class="contacts-content">
+            <div class="contacts-text">
+                <h2 class="contacts-title">Контакты</h2>
+                <p class="contacts-subtitle">Есть вопрос, или вы хотите получить бесплатную консультацию? Свяжитесь с нами, и мы предоставим необходимую информацию!</p>
+                
+                <div class="contacts-info">
+                    <div class="contact-item">
+                        <p class="contact-label">Адрес офиса</p>
+                        <p class="contact-value">г. Москва, ул. Дубининская, д. 53</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <p class="contact-label">Телефон:</p>
+                        <p class="contact-value">+7 495 118-32-82</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <p class="contact-label">Электронная почта</p>
+                        <p class="contact-value">mailbox@leadconveer.ru</p>
+                    </div>
+                    
+                    <div class="messenger-row">
+                        <p class="contact-label">Или напишите нам в любимом мессенджере:</p>
+                        <img src="../assets/images/img_telegram_icon_130816.svg" alt="Telegram" class="messenger-icon" />
+                    </div>
+                </div>
+            </div>
+            
+            <img src="../assets/images/img_1694470556_happ.png" alt="Офис" class="contacts-image" />
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <p class="footer-copyright">© 2025 Все права защищены. Технология «Лид Конвейер» - лидогенерация для бизнеса.</p>
+                <p class="footer-company">ООО «ДС-ГРУПП» ИНН 7801355174 ОГРН 1187847129425</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Блог |</a>
+                <a href="#">Договор-оферта |</a>
+                <a href="#">Политика конфиденциальности |</a>
+                <a href="#">Соглашение об обработке данных |</a>
+                <a href="#">Вход в личный кабинет</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade In Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Button Hover Effects
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 6px 20px rgba(255, 102, 0, 0.3)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Pricing Card Hover Effects
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Video Play Button Animation
+        document.querySelectorAll('.play-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Add video play functionality here
+                console.log('Video play clicked');
+            });
+        });
+
+        // Form Validation (if forms are added)
+        function validateForm(form) {
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ff6600';
+                } else {
+                    input.style.borderColor = '#e5e5e5';
+                }
+            });
+            
+            return isValid;
+        }
+
+        // Lazy Loading for Images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Performance Optimization
+        window.addEventListener('load', function() {
+            // Remove loading states
+            document.body.classList.add('loaded');
+            
+            // Initialize any third-party scripts
+            console.log('Page fully loaded');
+        });
+        document.querySelectorAll('.pagination-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                // Remove active class from siblings
+                const siblings = this.parentElement.querySelectorAll('.pagination-dot');
+                siblings.forEach(sibling => {
+                    sibling.classList.remove('active');
+                    sibling.classList.add('inactive');
+                });
+                
+                // Add active class to clicked dot
+                this.classList.remove('inactive', 'gray', 'dark-gray');
+                this.classList.add('active');
+            });
+        });
+        function showStep(index) {
+  const steps = document.querySelectorAll('.step-card');
+  const dots = document.querySelectorAll('.pagination-dot');
+
+  steps.forEach((step, i) => {
+    step.classList.toggle('active', i === index);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+        
+    </script>
+</body>
+</html>
